@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>챨리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: rgb(255, 255, 255);
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrap {
+      max-width: 420px;
+      width: 100%;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    /* ── 아바타 ── */
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #000000;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 500;
+      color: #000000;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    /* 프로필 이미지 사용 시: <img> 태그를 .avatar 안에 넣으세요 */
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── 이름 & 소개 ── */
+    .name {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .bio {
+      font-size: 14px;
+      font-weight: 300;
+      color: #000000;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    /* ── 링크 카드 ── */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #fff;
+      border: 1px solid #000000;
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .link-card:hover {
+      border-color: #ccc;
+      background: #f7f6f2;
+      transform: translateY(-2px);
+    }
+
+    .link-card:active {
+      transform: scale(0.99);
+    }
+
+    .link-card:nth-child(1) { animation-delay: 0.3s; }
+    .link-card:nth-child(2) { animation-delay: 0.4s; }
+    .link-card:nth-child(3) { animation-delay: 0.5s; }
+
+    /* ── 아이콘 배지 ── */
+    .link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .link-icon svg { width: 18px; height: 18px; }
+
+    .icon-blog    { background: #f1efe8; }
+    .icon-insta   { background: #fbeaf0; }
+    .icon-youtube { background: #fcebeb; }
+
+    /* ── 텍스트 ── */
+    .link-text { flex: 1; text-align: left; }
+
+    .link-label {
+      font-size: 12px;
+      font-weight: 300;
+      color: #999;
+      margin-bottom: 2px;
+    }
+
+    .link-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    .link-arrow { color: #000000; font-size: 14px; flex-shrink: 0; }
+
+
+
+    /* ── 애니메이션 ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- 아바타: 이니셜 텍스트 대신 이미지 쓰려면 아래처럼 교체 -->
+    <div class="avatar"><img src="profil.png" alt="프로필" /></div> 
+    
+
+    <!-- ▼ 이름 & 소개 수정 -->
+    <h1 class="name">챨리</h1>
+    <p class="bio">
+      인플루언서 섭외 및 이벤트 기획 <br>
+      홍보 대행(공연,푸드,이벤트) <br>
+    </p>
+
+    <div class="links">
+
+      <!-- ▼ 블로그 URL 수정 --> 
+      <a class="link-card" href="https://m.blog.naver.com/333rp" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:none;">
+          <img src="blog-icon.png" alt="블로그" style="width:40px; height:40px; object-fit:cover; border-radius:10px;" />
+        </div>
+        <div class="link-text">
+          <p class="link-label">Blog</p>
+          <p class="link-title">찰리의여행맛집story</p>  <!-- ▼ 표시될 이름 수정 -->
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <!-- ▼ 인스타 URL & 핸들 수정 -->
+      <a class="link-card" href="https://www.instagram.com/charle_days?igsh=MTZ2cTQ3NHR2eHZsOA==" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:none;">
+          <img src="insta-icon.png" alt="블로그" style="width:40px; height:40px; object-fit:cover; border-radius:10px;" />
+        </div>
+        <div class="link-text">
+          <p class="link-label">Instagram</p>
+          <p class="link-title">@charle_days</p>  <!-- ▼ 핸들 수정 -->
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <!-- ▼ 유튜브 URL & 채널명 수정 -->
+      <a class="link-card" href="https://youtube.com/@tv-oc9mw?si=cWEWdn_Gwn7fpb-E" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:none;">
+          <img src="youtube-icon.png" alt="블로그" style="width:40px; height:40px; object-fit:cover; border-radius:10px;" />
+        </div>
+        <div class="link-text">
+          <p class="link-label">YouTube</p>
+          <p class="link-title">챨리의일상</p>  <!-- ▼ 채널명 수정 -->
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</body>
+</html>
